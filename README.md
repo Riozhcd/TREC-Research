@@ -59,6 +59,8 @@
 3. 在数据集合非常的时候，只有Indri, IXE, MTerrier和Zettair的索引性能不会大幅度下降，而Swish-E， Swish++ 在给定系统参数下，根本不能够对大数据集合进行索引。
 
 ## WT10g 数据说明
+
+### 数据概述
 ============
 
 Contents of WT10g
@@ -81,10 +83,14 @@ CD5 also contains:                   info, which has additional information gene
 Note well: The contents of this directory ( WT10g::CD5::info ) do not
 constitute part of WT10g's data.
 
+
+### Data Set info directory information
 None of the files in this info directory should be indexed.
 
-It contains the following files:
 
+
+#### 文件列表
+It contains the following files:
 README -	this file
 docid_to_url -	mappings: WT10g docid -> URL (*)
 homepages -	mappings: server name -> WT10g docid
@@ -132,52 +138,52 @@ WTX001-B01-201 http://www.cdnemb-washdc.org:80/sanfran.html
 
 and so on.
 
-
-Document format
+### Document format
 ---------------
 
 The following is an example document contained within the collection.
-All documents are delimited by <DOC></DOC> tags. The unique WT10g
-document identifier is enclosed within <DOCNO></DOCNO> tags, and the
+All documents are delimited by *<DOC></DOC>* tags. The unique WT10g
+document identifier is enclosed within *<DOCNO></DOCNO>* tags, and the
 old VLC2 document identifier is contained on the next line between
-<DOCOLDNO></DOCOLDNO> tags. Next comes a <DOCHDR></DOCHDR> section
+*<DOCOLDNO></DOCOLDNO>* tags. Next comes a *<DOCHDR></DOCHDR>* section
 which provides various bits of information about the document reported
 by the http server which served the document to the original Internet
 Archive crawler. Lastly the actual HTML source is given.
 
-<DOC>
-<DOCNO>WTX104-B01-1</DOCNO>
-<DOCOLDNO>IA097-001048-B043-338</DOCOLDNO>
-<DOCHDR>
-http://msfcinfo.msfc.nasa.gov:80/nmo/nmonasa.html 192.112.225.4 19970215104446 text/html 1014
-HTTP/1.0 200 Document follows
-Date: Sat, 15 Feb 1997 10:37:04 GMT
-Server: NCSA/1.5
-Content-type: text/html
-</DOCHDR>
+```
+	<DOC>
+	<DOCNO>WTX104-B01-1</DOCNO>
+	<DOCOLDNO>IA097-001048-B043-338</DOCOLDNO>
+	<DOCHDR>
+	http://msfcinfo.msfc.nasa.gov:80/nmo/nmonasa.html 192.112.225.4 19970215104446 text/html 1014
+	HTTP/1.0 200 Document follows
+	Date: Sat, 15 Feb 1997 10:37:04 GMT
+	Server: NCSA/1.5
+	Content-type: text/html
+	</DOCHDR>
 
-<HTML>
-<HEAD>
-<TITLE>Instructions to NASA Sponsors </TITLE> </HEAD>
-<BODY><H1><STRONG>Instructions to NASA Sponsors </STRONG></H1><P><H3>JPL is under the institutional management of 
-the Office of Space Science at NASA Headquarters.  NASA Centers or activities contemplating the placement of resea
-rch and development work at the Jet Propulsion Laboratory may contact the NASA Contracting Officer(<A href="mailto
-: vstickley@nmo.jpl.nasa.gov"> vstickley@nmo.jpl.nasa.gov)</a> at the  NMO  for more details or the Research and A
-dministration Division of the Office of Space Science, Code SP at NASA Headquarters.
-
-
-</H3><HR>[<A HREF="nmohome.html">NMO Procurement Home Page</A>]<P>Please send comments and questions to <A href="m
-ailto:kwolf@nmo.jpl.nasa.gov"> wolf@nmo.jpl.nasa.gov</a><BR>Curator and Owner:  Katherine M. Wolf<BR>Last update t
-o this page: September 15, 1995 @ 3:23 p.m. PDT
+	<HTML>
+	<HEAD>
+	<TITLE>Instructions to NASA Sponsors </TITLE> </HEAD>
+	<BODY><H1><STRONG>Instructions to NASA Sponsors </STRONG></H1><P><H3>JPL is under the institutional management of 
+	the Office of Space Science at NASA Headquarters.  NASA Centers or activities contemplating the placement of resea
+	rch and development work at the Jet Propulsion Laboratory may contact the NASA Contracting Officer(<A href="mailto
+	: vstickley@nmo.jpl.nasa.gov"> vstickley@nmo.jpl.nasa.gov)</a> at the  NMO  for more details or the Research and A
+	dministration Division of the Office of Space Science, Code SP at NASA Headquarters.
 
 
-</BODY>
-</HTML>
+	</H3><HR>[<A HREF="nmohome.html">NMO Procurement Home Page</A>]<P>Please send comments and questions to <A href="m
+	ailto:kwolf@nmo.jpl.nasa.gov"> wolf@nmo.jpl.nasa.gov</a><BR>Curator and Owner:  Katherine M. Wolf<BR>Last update t
+	o this page: September 15, 1995 @ 3:23 p.m. PDT
 
-</DOC>
 
+	</BODY>
+	</HTML>
 
-Disclaimer 
+	</DOC>
+```
+
+### Disclaimer 
 ---------- 
 
 While all reasonable attempts have been made to accurately identify
@@ -193,7 +199,6 @@ on the info files to be completely accurate.
 
 If you encounter any major discrepancies within the info files, we 
 would be very grateful to hear about them.
-
 
 
 -----------------------------------
