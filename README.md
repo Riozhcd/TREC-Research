@@ -43,12 +43,15 @@
 ### 实验结果：
 
 ![不同文档集合各检索引擎开销](https://github.com/Riozhcd/TREC-Research/blob/master/doc/indexer.jpg)
+
 1. ht://Dig， Lucene和XMLSearch会有固定大小的内存开销，并且前两者的内存开销与数据集的大小没有关系(30MB~120MB);IXE，MG4J，Swish-E， Swish++ 和Terrier内存开销大，呈现线性增长；针对大的数据集合要1G以上的内存开销。
 
 ![不同搜索引擎生成文件大小](https://github.com/Riozhcd/TREC-Research/blob/master/doc/indexersize.jpg)
+
 2. Lucene, MG4J, Swish-E, Swish++, XMLSearch 和Zettair的索引大小为数据集大小的25%~35%。Terrier建立索引文件大小为原来的50%。其他还增大了。
 
 ![WT10G实验结果](https://github.com/Riozhcd/TREC-Research/blob/master/doc/WT10G.jpg)
+
 3. 在数据集合非常的时候，只有Indri, IXE, MTerrier和Zettair的索引性能不会大幅度下降，而Swish-E， Swish++ 在给定系统参数下，根本不能够对大数据集合进行索引。
 
 总结：
@@ -72,13 +75,13 @@ on. Within each directory, documents are bundled together into files
 of roughly 2MB in size, numbered B01, B02 .. B50. The bundle files are
 all compressed using gzip, so exist as B01.gz etc.
 
-CD1 contains data for the following: WTX001 .. WTX024, each directory contains 50 bundle files B01.gz .. B50.gz
-CD2 contains data for the following: WTX024 .. WTX048, each directory contains 50 bundle files B01.gz .. B50.gz
-CD3 contains data for the following: WTX049 .. WTX072, each directory contains 50 bundle files B01.gz .. B50.gz
-CD4 contains data for the following: WTX073 .. WTX096, each directory contains 50 bundle files B01.gz .. B50.gz
-CD5 contains data for the following: WTX097 .. WTX104, each directory contains 50 bundle files B01.gz .. B50.gz
-                                                       except WTX104, containing 7 bundle files B01.gz .. B07.gz
-CD5 also contains:                   info, which has additional information generated for WT10g data, described below.
+CD1 contains data for the following: WTX001 .. WTX024, each directory contains 50 bundle files B01.gz .. B50.gz  
+CD2 contains data for the following: WTX024 .. WTX048, each directory contains 50 bundle files B01.gz .. B50.gz   
+CD3 contains data for the following: WTX049 .. WTX072, each directory contains 50 bundle files B01.gz .. B50.gz   
+CD4 contains data for the following: WTX073 .. WTX096, each directory contains 50 bundle files B01.gz .. B50.gz   
+CD5 contains data for the following: WTX097 .. WTX104, each directory contains 50 bundle files B01.gz .. B50.gz   
+                                                       except WTX104, containing 7 bundle files B01.gz .. B07.gz   
+CD5 also contains:                   info, which has additional information generated for WT10g data, described below.   
 
 Note well: The contents of this directory ( WT10g::CD5::info ) do not
 constitute part of WT10g's data.
@@ -91,24 +94,24 @@ None of the files in this info directory should be indexed.
 
 #### 文件列表
 It contains the following files:
-README -	this file
-docid_to_url -	mappings: WT10g docid -> URL (*)
-homepages -	mappings: server name -> WT10g docid
-in_links -	mappings: WT10g docid -> set of WT10g docids, whose pages 
-                          contain (incoming) links to this page (*)
-out_links -	mappings: WT10g docid -> set of WT10g docids, whose pages 
-                          are named by (outgoing) links from this page (*)
-servers -       server names
-url_to_docid -  mappings: URL -> WT10g docid 
-wt10g_to_vlc2 - mappings: WT10g docid -> VLC2 docid (*)
+* README -	this file   
+* docid_to_url -	mappings: WT10g docid -> URL (*)   
+* homepages -	mappings: server name -> WT10g docid   
+* in_links -	mappings: WT10g docid -> set of WT10g docids, whose pages     
+                          contain (incoming) links to this page (*)    
+* out_links -	mappings: WT10g docid -> set of WT10g docids, whose pages     
+                          are named by (outgoing) links from this page (*)    
+* servers -       server names   
+* url_to_docid -  mappings: URL -> WT10g docid    
+* wt10g_to_vlc2 - mappings: WT10g docid -> VLC2 docid (*)   
 
-URLs are of the form: 		http://server_name/path
-Server names are of the form: 	www.foo.com:port_number
-Port numbers are of the form: 	1234 (but are usually just 80)
-WT10g docids are of the form: 	WTX123-B45-6789, where the final doc 
-                                number in the bundle is numbered from 1
-VLC2 docids are of the form: 	IA012-003456-B078-901, where the final 
-                                doc number in the bundle is numbered from 1
+URLs are of the form: 		http://server_name/path    
+Server names are of the form: 	www.foo.com:port_number    
+Port numbers are of the form: 	1234 (but are usually just 80)   
+WT10g docids are of the form: 	WTX123-B45-6789, where the final doc    
+                                number in the bundle is numbered from 1   
+VLC2 docids are of the form: 	IA012-003456-B078-901, where the final     
+                                doc number in the bundle is numbered from 1   
 
 (*) Note well:
 
@@ -121,20 +124,20 @@ each bundle.
 
 For example, the first entries of docid_to_url are:
 
-WTX001-B01-1 http://www.ram.org:80/ramblings/movies/jimmy_hollywood.html
-WTX001-B01-10 http://sd48.mountain-inter.net:80/hss/teachers/Prothero.html
-WTX001-B01-100 http://www.ccs.org:80/hc/9607/win95.html
-WTX001-B01-101 http://www.cdc.net:80/~dejavu/scuba-spec.html
-WTX001-B01-102 http://www.cdm.com:80/humanres/jobs/enevga.html
+WTX001-B01-1 http://www.ram.org:80/ramblings/movies/jimmy_hollywood.html    
+WTX001-B01-10 http://sd48.mountain-inter.net:80/hss/teachers/Prothero.html    
+WTX001-B01-100 http://www.ccs.org:80/hc/9607/win95.html    
+WTX001-B01-101 http://www.cdc.net:80/~dejavu/scuba-spec.html    
+WTX001-B01-102 http://www.cdm.com:80/humanres/jobs/enevga.html    
 
 after which there are a number of other entires followed by:
 
-WTX001-B01-198 http://www.cdc.net:80/~dupre/pharmacy/CD581.html
-WTX001-B01-199 http://www.cdnemb-washdc.org:80/baltimor.html
-WTX001-B01-2 http://www.radio.cbc.ca:80/radio/programs/current/quirks/archives/feb1796.htm
-WTX001-B01-20 http://moe.med.yale.edu:80/mirror/vat/la.html
-WTX001-B01-200 http://www.cdc.net:80/~dupre/pharmacy/pbsound.html
-WTX001-B01-201 http://www.cdnemb-washdc.org:80/sanfran.html
+WTX001-B01-198 http://www.cdc.net:80/~dupre/pharmacy/CD581.html   
+WTX001-B01-199 http://www.cdnemb-washdc.org:80/baltimor.html    
+WTX001-B01-2 http://www.radio.cbc.ca:80/radio/programs/current/quirks/archives/feb1796.htm    
+WTX001-B01-20 http://moe.med.yale.edu:80/mirror/vat/la.html    
+WTX001-B01-200 http://www.cdc.net:80/~dupre/pharmacy/pbsound.html   
+WTX001-B01-201 http://www.cdnemb-washdc.org:80/sanfran.html   
 
 and so on.
 
